@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	example_simple "github.com/ltbatista/protobuf-with-go/src/simple"
+	simplepb "github.com/ltbatista/protobuf-with-go/src/simple"
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 }
 
 func doSimple() {
-	sm := example_simple.SimpleMessage{
+	sm := simplepb.SimpleMessage{
 		Id:         12345,
 		IsSimple:   true,
 		Name:       "My Simple Message",
