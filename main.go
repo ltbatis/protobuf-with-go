@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	jsonpb "github.com/golang/protobuf/jsonpb"
+	"github.com/golang/protobuf/jsonpb"
 	simplepb "github.com/ltbatista/protobuf-with-go/src/simple"
 	"google.golang.org/protobuf/proto"
 )
