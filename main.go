@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 
+	jsonpb "github.com/golang/protobuf/jsonpb"
 	simplepb "github.com/ltbatista/protobuf-with-go/src/simple"
 	"google.golang.org/protobuf/proto"
 )
@@ -12,6 +13,18 @@ import (
 func main() {
 	sm := doSimple()
 	readAndWriteDemo(sm)
+	smAsString := toJSON(sm)
+	fmt.Println(smAsString)
+}
+
+func toJSON(pb *simplepb.SimpleMessage) string {
+	marshaler := jsonpb.Marshaler{}
+	out, err := marshaler.MarshalToString(pb)
+	if err != nil {
+		log.Fatalln("Can't convert to JSON", err)
+		return ""
+	}
+	return out
 }
 
 func readAndWriteDemo(sm *simplepb.SimpleMessage) {
